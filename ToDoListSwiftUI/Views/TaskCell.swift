@@ -12,6 +12,8 @@ struct TaskCell: View {
     @ObservedObject var passedTaskItem: TaskItem
     
     var body: some View {
+        
+        CheckBoxView(passedTaskItem: passedTaskItem).environmentObject(dateHolder)
         Text(passedTaskItem.name ?? "")
             .padding(.horizontal)
     }
